@@ -3,12 +3,7 @@ import os
 import PlayerOne as p1
 import PlayerTwo as p2
 
-ROWS = 8
-COLS = 8
-
-NONE = 0
-WHI  = 1
-BLK  = 2
+from Defs import *
 
 Board = []
 
@@ -145,6 +140,8 @@ if __name__ == "__main__":
     if P1Color == BLK:
         P2Color = WHI
 
+    p2.Color = P2Color
+
     NoMoves = False
     GameOver = False
 
@@ -186,6 +183,8 @@ if __name__ == "__main__":
             break
 
     Count = countBoard()
+
+    printBoard()
 
     print("White pieces: %d" % Count[WHI-1])
     print("Black pieces: %d" % Count[BLK-1])
